@@ -78,6 +78,37 @@ Returns website availability (SLA) data.
 
 ---
 
+## Run as a systemd Service
+
+To run the server in the background and start it on system boot:
+
+1. Copy the service file:
+```bash
+sudo cp grafana-betterstack.service /etc/systemd/system/grafana-betterstack.service
+```
+
+2. Reload systemd and start the service:
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable grafana-betterstack
+sudo systemctl start grafana-betterstack
+```
+
+3. Check status and logs:
+```bash
+sudo systemctl status grafana-betterstack
+```
+
+4. On service failure check the journal logs:
+```bash
+journalctl -u grafana-betterstack -n 50 --no-pager
+```
+
+Ensure that your virtual environment and script paths are correctly set in the service file.
+
+---
+
 ## Architecture
 
 The server uses the `UPTIME_REST_API_Client` class to interact with BetterStack's API:
