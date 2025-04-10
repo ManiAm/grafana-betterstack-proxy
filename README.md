@@ -32,7 +32,7 @@ export BetterStack_API_TOKEN=your_betterstack_token
 
 ### Run the Server
 ```bash
-python3 rest_server.py
+python3 grafana_server.py
 ```
 
 The server will be available at `http://<your_host>:5006`
