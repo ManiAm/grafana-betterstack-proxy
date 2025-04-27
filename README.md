@@ -80,7 +80,7 @@ Returns website availability (SLA) data.
 
 ## Run as a systemd Service
 
-To run the server in the background and start it on system boot:
+To run the project in the background and start it on system boot:
 
 1. Copy the service file:
 ```bash
@@ -88,6 +88,7 @@ sudo cp grafana-betterstack.service /etc/systemd/system/grafana-betterstack.serv
 ```
 
 2. Reload systemd and start the service:
+
 ```bash
 sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
@@ -96,11 +97,13 @@ sudo systemctl start grafana-betterstack
 ```
 
 3. Check status and logs:
+
 ```bash
 sudo systemctl status grafana-betterstack
 ```
 
 4. On service failure check the journal logs:
+
 ```bash
 journalctl -u grafana-betterstack -n 50 --no-pager
 ```
